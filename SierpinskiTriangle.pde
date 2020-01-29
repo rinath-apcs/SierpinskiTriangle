@@ -1,16 +1,20 @@
-public void setup()
-{
+final int initialX = 0,
+          initialY = 100,
+          initialLength = 20;
 
+final double minLength = 0.01;
+
+void setup() {
+	setup(200, 200);
 }
-public void draw()
-{
 
+void draw() {
+	serpinski(initialLength, initialX, initialY);
 }
-public void mouseDragged()//optional
-{
 
-}
-public void sierpinski(int x, int y, int len) 
-{
-
+void serpinski(double length, double x, double y) {
+	int depth = initialLength / length);
+	if (len > minLength) {
+		triangle(x, y, x + length / 2.0, y + length / 2.0, x + length / 2.0, y - length / 2.0);
+	}
 }
