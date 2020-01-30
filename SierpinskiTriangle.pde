@@ -1,20 +1,23 @@
-final int initialX = 0,
-          initialY = 100,
-          initialLength = 20;
-
-final double minLength = 0.01;
+final float initialX = 0.0,
+            initialY = 0.0,
+            initialLength = 1000,
+			base = 0.5;
 
 void setup() {
-	setup(200, 200);
+	size(1000, 1000);
+	colorMode(HSB, 110);
+	sierpinski(initialLength, initialX, initialY);
 }
 
-void draw() {
-	serpinski(initialLength, initialX, initialY);
-}
+void sierpinski(float length, float x, float y) {
+	final float slength = length / 2.0;
 
-void serpinski(double length, double x, double y) {
-	int depth = initialLength / length);
-	if (len > minLength) {
-		triangle(x, y, x + length / 2.0, y + length / 2.0, x + length / 2.0, y - length / 2.0);
+	if (length <= base) {
+		stroke((y / height) * 100, 95, 95);
+		triangle(x, y, x + slength, y + length, x + length, y);
+	} else {
+		sierpinski(slength, x, y);
+		sierpinski(slength, x + slength, y);
+		sierpinski(slength, x + slength / 2.0, y + slength);
 	}
 }
